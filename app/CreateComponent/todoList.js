@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 ///TO DO LIST
 const ToDoList = (props) => (
@@ -47,4 +46,4 @@ class ToDoItem extends React.Component {
     }
 }
 
-ReactDOM.render(<ToDoItem />, document.getElementById('todoList'));
+export default ToDoItem;

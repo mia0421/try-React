@@ -1,11 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 /// 使用 propTypes須引入
 import PropTypes from 'prop-types';
 
 /// 建立元件方法一
-class App extends React.Component {
+class TryPropTypes extends React.Component {
   //若是需要綁定 this.方法或是需要在 constructor 使用 props，定義 state，就需要 constructor。若是在其他方法（如 render）使用 this.props 則不用一定要定義 constructor
   constructor(props) {
     super(props);
@@ -51,12 +50,12 @@ class App extends React.Component {
 //   return(<div>Hello, {name}</div>);
 // };
 
-App.propTypes = {
+TryPropTypes.propTypes = {
   name: PropTypes.string
 }
 
-App.defaultProps = {
+TryPropTypes.defaultProps = {
   name: 'Mia'
 }
 
-ReactDOM.render(<App name='mia' />, document.getElementById('app'));
+export default TryPropTypes;

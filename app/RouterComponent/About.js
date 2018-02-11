@@ -1,10 +1,9 @@
 import React from 'react'
 
-const Repos = (props) => (
+const About = (props) => (
     <div>
-        <h5>Repos</h5>
-        <h5>{this.props.params.name}</h5> 
+        <h5>About</h5>
     </div>
 )
 
-export default Repos
+export default About

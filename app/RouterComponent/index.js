@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {
     BrowserRouter as Router,
     Route,
@@ -10,7 +9,7 @@ import Home from './Home';
 import User from './User';
 import About from './About';
 
-const App = () => (
+const HomePage = () => (
     <Router>
         <Switch>
         <Route exact path="/" component={Home}></Route>
@@ -20,5 +19,5 @@ const App = () => (
     </Router>
 );
 
-ReactDOM.render(<App />, document.getElementById('routerContent'));
+export default HomePage;
 
