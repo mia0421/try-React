@@ -9,16 +9,19 @@ import {
 } from '../../constants/actionTypes';
 
 const githubReducers = handleActions({
-    GET_GITHUB_SUCCESS: (state, {payload}) => {
-        state.merge({
-            data: payload.data
-        });
+        GET_GITHUB_SUCCESS: (state, {payload}) => (
+            state.merge({
+                data: payload.data
+            })
+        ),
+        CHAGE_USER_ID: (state, {payload}) => (
+            state.merge({
+                userId: payload.userId
+            })
+        )
     },
-    CHAGE_USER_ID: (state, {payload}) => {
-        state.merge({
-            userId: payload.userId
-        });
-    }
-}, GithubState);
+    GithubState
+    )
+;
 
 export default githubReducers;

@@ -15,21 +15,21 @@ import {
     hideSpinner
 } from './uiActions';
 
-export const getGithub = () => {
-    return () => {
+export const getGithub = (userId = 'torvalds') => {
+    return (dispatch) => {
         dispatch({type: 'GET_GITHUB_INITIATE'});
         dispatch(showSpinner());
-        fetch('https://api.github.com/users/' + userId)
+        fetch('http://localhost:3000/customers/' + userId)
             .then((response) => {
                 return response.json();
             })
             .then((json) => {
-                dispatch({ type: GET_GITHUB_SUCCESS, payload: { data: json }});
+                dispatch({type: GET_GITHUB_SUCCESS, payload: {data: json}});
                 dispatch(hideSpinner());
             })
             .catch((response) => {
-                dispatch({ type: GET_GITHUB_FAIL, payload: { userId: text }});
+                dispatch({type: GET_GITHUB_FAIL})
             });
     }
-}
-export const changeUserId = (text) => ({type:'CHAGE_USER_ID',payload:{userId:text}});
+};
+export const changeUserId = (text) => ({type: 'CHAGE_USER_ID', payload: {userId: text}});
